@@ -6,6 +6,8 @@ namespace hello
     {
         static void Main(string[] args)
         {
+            ValueTypes();
+
             for (; ; )
             {
                 Greeting();
@@ -15,6 +17,20 @@ namespace hello
             }
 
         }
+
+        private static void ValueTypes()
+        {
+            int maxInt = int.MaxValue;
+            int minInt = int.MinValue;
+            long maxLong = long.MaxValue;
+            long minLong = long.MinValue;
+
+            Console.WriteLine("maxInt = " + maxInt);
+            Console.WriteLine("maxInt = " + minInt);
+            Console.WriteLine("maxInt = " + maxLong);
+            Console.WriteLine("maxInt = " + minLong);
+        }
+
         /// <summary>
         /// Resetujemy ustawienia konsoli
         /// </summary>
@@ -60,4 +76,3 @@ namespace hello
         }
     }
 }
-//33:00/42:37 Odcinek 6)

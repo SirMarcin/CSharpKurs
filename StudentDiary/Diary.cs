@@ -9,7 +9,8 @@ namespace StudentDiary
     class Diary
     {
         //Stan
-        List<float> ratings;
+        List<float> ratings = new List<float>();
+        
 
         //Zachowania
         public void AddRating(float rating)

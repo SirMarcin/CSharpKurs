@@ -1,5 +1,8 @@
 ﻿namespace Odcinek10
 {
+    /// <summary>
+    /// Zawiera statystyki ocen
+    /// </summary>
     public class DiaryStatistics
     {
         public float AverageGrade;

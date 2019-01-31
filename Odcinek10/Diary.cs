@@ -12,12 +12,23 @@ namespace Odcinek10
         public Diary()
         {
             ratings = new List<float>();
+            Count++;
         }
 
-        //Stan
-        List<float> ratings;
+        //Stan (zmienne - pola)
+        private List<float> ratings;
 
-        internal DiaryStatistics ComputStatistics()
+        public static float MinGrade = 2;
+        public static float MaxGrade = 5;
+        public static long Count = 0;
+        public string Name;
+
+        //Zachowania
+        /// <summary>
+        /// Podaje statystki dotyczące ocen takie jak średnia, najwyższa ocena i najniższa ocena
+        /// </summary>
+        /// <returns></returns>
+        public DiaryStatistics ComputStatistics()
         {
 
             DiaryStatistics stats = new DiaryStatistics();
@@ -43,31 +54,13 @@ namespace Odcinek10
         /// <param name="rating"></param>
         public void AddRating(float rating)
         {
-            ratings.Add(rating);
+
+                if (Diary.MinGrade >=2 && Diary.MaxGrade <= 5)
+                {
+                    ratings.Add(rating);
+                }
+
         }
 
-        public float CalculateAverage()
-        {
-            float sum = 0, avg = 0;
-
-            foreach (var rating in ratings)
-            {
-                sum += rating;
-            }
-
-            avg = sum / ratings.Count();
-
-            return avg;
-        }
-
-        public float GiveMaxRating()
-        {
-            return ratings.Max();
-        }
-
-        public float GiveMinRating()
-        {
-            return ratings.Min();
-        }
     }
 }

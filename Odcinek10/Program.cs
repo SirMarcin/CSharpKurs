@@ -27,6 +27,8 @@ namespace Odcinek10
             //Immutable();
 
             Arrays();
+
+            Console.ReadKey();
         }
 
         private static void Arrays()
@@ -41,7 +43,6 @@ namespace Odcinek10
             }
             
         }
-
         private static void AddRatings(float[] ratings)
         {
             ratings[0] = 0.6f;
@@ -76,5 +77,8 @@ namespace Odcinek10
             int x2 = IncrementNumber(ref x1);
             Console.WriteLine(x1);
         }
+        
+        
     }
 }
+

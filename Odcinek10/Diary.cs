@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Odcinek10
 {
-    class Diary
+    public class Diary
     {
 
         public Diary()
@@ -55,7 +55,7 @@ namespace Odcinek10
         public void AddRating(float rating)
         {
 
-                if (Diary.MinGrade >=2 && Diary.MaxGrade <= 5)
+                if (rating >=2 && rating <= 5)
                 {
                     ratings.Add(rating);
                 }

@@ -18,18 +18,21 @@ namespace Members
 
             DiaryStatistics stats = diary.ComputStatistics();
 
-            WriteReslt("Średnia", stats.AverageGrade);
-            WriteReslt("Najwyższa", stats.MaxGrade);
-            WriteReslt("Najniższa", stats.MinGrade);
+            
+            WriteReslt("Najniższa", (long)stats.MinGrade, 2);
+            WriteReslt("Najwyższa", (int)stats.MaxGrade);
+            WriteReslt("Średnia", stats.AverageGrade, 2, 5 ,6 ,7);
+            WriteReslt("Najniższa", (long)stats.MinGrade);
+            
 
 
 
             Console.ReadKey();
         }
 
-        static void WriteReslt(string description, float result)
+        static void WriteReslt(string description, params float[] result)
         {
-            Console.WriteLine(description + ": " + result);
+            Console.WriteLine(description + ": " + result[0] + result[1] + result[2] + result[3]);
         }
 
         static void WriteReslt(string description, int result)
@@ -40,6 +43,11 @@ namespace Members
         static void WriteReslt(string description, long result)
         {
             Console.WriteLine(description + ": " + result);
+        }
+
+        static void WriteReslt(string description, long result, long test)
+        {
+            Console.WriteLine($"{description}: {result}: i jakiś szajz {2}: {3}: ");
         }
     }
 }

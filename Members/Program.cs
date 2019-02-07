@@ -18,14 +18,18 @@ namespace Members
 
             DiaryStatistics stats = diary.ComputStatistics();
 
-            
-            WriteReslt("Najniższa", (long)stats.MinGrade, 2);
-            WriteReslt("Najwyższa", (int)stats.MaxGrade);
-            WriteReslt("Średnia", stats.AverageGrade, 2, 5 ,6 ,7);
-            WriteReslt("Najniższa", (long)stats.MinGrade);
-            
 
+            //WriteReslt("Najniższa", (long)stats.MinGrade, 2);
+            //WriteReslt("Najwyższa", (int)stats.MaxGrade);
+            //WriteReslt("Średnia", stats.AverageGrade, 2, 5 ,6 ,7);
+            //WriteReslt("Najniższa", (long)stats.MinGrade);
 
+            diary._name = "Dzienniczek Marcina";
+            
+            diary.Name = null;
+            diary.Name = "";
+            Console.WriteLine(diary._name);
+            Console.WriteLine(diary.Name);
 
             Console.ReadKey();
         }

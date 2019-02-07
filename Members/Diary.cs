@@ -21,7 +21,23 @@ namespace Members
         public static float MinGrade = 2;
         public static float MaxGrade = 5;
         public static long Count = 0;
-        public string Name;
+
+        public string _name;
+
+        public string Name
+        {
+            get
+            {
+                return _name.ToUpper();
+            }
+            set
+            {
+                if (!string.IsNullOrEmpty(value))
+                {
+                    _name = value;
+                }
+            }
+        }
 
         //Zachowania
         /// <summary>

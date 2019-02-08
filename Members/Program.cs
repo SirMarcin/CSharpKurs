@@ -11,11 +11,14 @@ namespace Members
         static void Main(string[] args)
         {
             Diary diary = new Diary();
-            diary.NameChanged = new NameChangedDelegate(OnNameChanged);
-            diary.NameChanged += new NameChangedDelegate(OnNameChanged2);
-            diary.NameChanged += new NameChangedDelegate(OnNameChanged3);
-            diary.NameChanged += new NameChangedDelegate(OnNameChanged3);
-            diary.NameChanged += new NameChangedDelegate(OnNameChanged3);
+            diary.NameChanged +=  OnNameChanged;
+            diary.NameChanged +=  OnNameChanged2;
+            diary.NameChanged +=  OnNameChanged3;
+            diary.NameChanged +=  OnNameChanged3;
+            diary.NameChanged +=  OnNameChanged3;
+            diary.NameChanged -= OnNameChanged3;
+            diary.NameChanged -= OnNameChanged3;
+            
             //diary.AddRating(3f);
             //diary.AddRating(3.5f);
             //diary.AddRating(4f);
@@ -39,16 +42,16 @@ namespace Members
             Console.ReadKey();
         }
 
-        private static void OnNameChanged(string existingName, string newName)
+        private static void OnNameChanged(object sender, NameChangedEventArgs args)
         {
-            Console.WriteLine($"Zmieniono nazwę z {existingName} na {newName} !");
+            Console.WriteLine($"Zmieniono nazwę z {args.ExistingName} na {args.NewName} !");
         }
 
-        private static void OnNameChanged2(string existingName, string newName)
+        private static void OnNameChanged2(object sender, NameChangedEventArgs args)
         {
             Console.WriteLine("****************");
         }
-        private static void OnNameChanged3(string existingName, string newName)
+        private static void OnNameChanged3(object sender, NameChangedEventArgs args)
         {
             Console.WriteLine("------------------");
         }

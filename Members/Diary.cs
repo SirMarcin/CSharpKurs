@@ -22,7 +22,7 @@ namespace Members
         public static float MaxGrade = 5;
         public static long Count = 0;
 
-        public string _name;
+        private string _name = "Domyślny dzienniczek";
 
         public string Name
         {
@@ -34,10 +34,16 @@ namespace Members
             {
                 if (!string.IsNullOrEmpty(value))
                 {
+                    if(_name != value)
+                    {
+                        NameChanged(_name, value);
+                    }
                     _name = value;
                 }
             }
         }
+        //Delegat
+        public NameChangedDelegate NameChanged;
 
         //Zachowania
         /// <summary>

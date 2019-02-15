@@ -32,18 +32,21 @@ namespace Members
             }
             set
             {
-                if (!string.IsNullOrEmpty(value))
-                {
-                    if(_name != value)
-                    {
-                        NameChangedEventArgs args = new NameChangedEventArgs();
-                        args.ExistingName = _name;
-                        args.NewName = value;
+                //if (string.IsNullOrEmpty(value))
+                //{
+                //    throw new ArgumentNullException("Nazwa nie może być pusta");
+                //}
 
-                        NameChanged(this, args);
-                    }
-                    _name = value;
+                    if (_name != value)
+                {
+                    NameChangedEventArgs args = new NameChangedEventArgs();
+                    args.ExistingName = _name;
+                    args.NewName = value;
+
+                    NameChanged(this, args);
                 }
+                _name = value;
+
             }
         }
         //Delegat
@@ -87,6 +90,6 @@ namespace Members
             }
 
         }
-
+        
     }
 }
